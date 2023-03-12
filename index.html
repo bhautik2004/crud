@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- data-bs-theme="dark"> -->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">E-Learning</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              course
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Web Development</a></li>
+              <li><a class="dropdown-item" href="#">App Development</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">E-books </a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contac US</a>
+          </li>
+
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+
+
+        </form>
+        <div class="mx-2 my-2">
+
+          <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#loginModal">login</button>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#signupModal">Sign UP</button>
+          <button class="btn btn-success" id="view" data-bs-toggle="modal" data-bs-target="">View</button>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary" id="login">Login</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Sign UP Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Sign UP Form</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="formation.php" method="post" id="ajaxform" accept-charset="utf-8">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Your Username</label>
+              <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Your email</label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Your Mobile Number</label>
+              <input type="number" name="mobileno" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your Mobile with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Address</label>
+              <input type="text" name="address" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <input type="submit" name="submit" value="submit" class="btn btn-primary">
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+ <!-- edit  Modal -->
+  <div class="modal fade" id="StudenteditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="id_edit">
+          <form action="update.php" method="post" id="ajaxform" accept-charset="utf-8">
+            <div class="mb-3">
+             
+              <label for="exampleInputEmail1" class="form-label">Enter Your Username</label>
+              <input type="text"  class="form-control" id="edit_name" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Your email</label>
+              <input type="email" class="form-control" id="edit_email"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Your Mobile Number</label>
+              <input type="number"  class="form-control" id="edit_mobile"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your Mobile with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Address</label>
+              <input type="text" class="form-control" id="edit_address"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password"  class="form-control" id="edit_password">
+            </div>
+
+            <input type="submit" name="submit" value="Edit" class="btn btn-primary update_ajax">
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="alert alert-info" id="success-alert" role="alert">
+    You Are Sign UP sucessfully...
+  </div>
+  <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="2.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="1.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="3.jpeg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+  <div class="viewTable" id="viewTable">
+    <table class="table" table-bordered table-striped>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile Number</th>
+          <th scope="col">Address</th>
+          <th scope="col">Password</th>
+          <th scope="col">action</th>
+
+        </tr>
+      </thead>
+      <tbody class="data">
+
+
+      </tbody>
+
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script>
+    // $(document).ready(function () {
+    //   $("#success-alert").hide();
+    //   $("#login").click(function showAlert() {
+    //       $("#loginModal").hide();
+    //      $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+    //       $("#success-alert").slideUp(500);
+    //       alert("login successfully");
+
+    //     });
+    //     return false;
+    //   });
+
+    // });
+    $(document).ready(function () {
+      $("#viewTable").hide();
+      $("#view").click(function () {
+        $("#viewTable").show();
+      });
+      getdata();
+ $(document).on("click",".edit_btn",function(){
+        var id = $(this).attr("id");
+       //  alert(stud_id);
+        $.ajax({
+                    type: "POST",
+                    url: "update.php",
+                    data: {
+                        'id': id
+                    },
+                    dataType:"JSON",
+                    success: function (data) {
+                        // console.log(response);
+                        // $.each(response, function (key, studedit) { 
+                            // console.log(studview['fname']);
+                            $('#id_edit').val(data.id);
+                            $('#edit_name').val(data.name);
+                            $('#edit_email').val(data.email);
+                            $('#edit_mobile').val(data.mobileno);
+                            $('#edit_password').val(data.password);
+                            $('#edit_address').val(data.address);
+                        // });
+                       
+                    }
+                    
+                });
+                $('#StudenteditModal').modal('show');
+
+            });            
+        });
+      // })
+     
+      $("#success-alert").hide();
+      $("#ajaxform").submit(function (event) {
+        var data = $("#ajaxform").serialize();
+        $.post("formation.php", data, function (responce) {
+          $("#signupModal").hide();
+
+          $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+           $("#success-alert").slideUp(500);
+         // alert("You Are Sign UP sucessfully...");
+          window.location.reload();
+        });
+
+      });
+      return false;
+
+    });
+    // });
+    function getdata() {
+      $.ajax({
+        type: "GET",
+        url: "fetch.php",
+
+        success: function (response) {
+          $.each(response, function (key, value) {
+            //console.log(value['fname']);
+            $('.data').append('<tr>' +
+              '<td class="stud_id">' + value['id'] + '</td>\
+                                <td>'+ value['name'] + '</td>\
+                                <td>'+ value['email'] + '</td>\
+                                <td>'+ value['mobileno'] + '</td>\
+                                <td>'+ value['address'] + '</td>\
+                                <td>'+ value['password'] + '</td>\
+                                <td>\
+                                  <a class="btn btn-primary edit_btn" href="#" onclick="" role="button">EDIT</a>\
+                                  <a class="btn btn-danger delete-button" href="#" role="button " >Delete</a>\
+                                </td>\
+                            </tr>');
+          });
+        }
+      });
+    }
+    $(document).on("click", ".delete-button", function () {
+    var id = $(this).data("id");
+    if (confirm("Are you sure you want to delete this record?")) {
+      $.ajax({
+        url: "delete.php",
+        type: "POST",
+        data: { id: id },
+        success: function (response) {
+          alert(response);
+          // Refresh the table
+          $("#view").trigger("click");
+        },
+        error: function (xhr, status, error) {
+          alert("Error: " + error);
+        },
+      });
+    }
+  });
+
+  </script>
+
+</body>
+
+</html>
